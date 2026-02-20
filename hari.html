@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Harikrishna Dasari | Portfolio</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+<style>
+
+/* RESET */
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+html{
+scroll-behavior:smooth;
+scroll-padding-top:100px;
+}
+
+body{
+font-family:'Montserrat',sans-serif;
+background:linear-gradient(120deg,#f4fbff,#f8f7ff);
+color:#26324a;
+line-height:1.6;
+}
+
+header{
+height:90vh;
+background:linear-gradient(rgba(0,0,0,0.55),rgba(0,0,0,0.55)),
+url('hari.jpeg') center/cover no-repeat;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+color:white;
+text-align:center;
+padding:20px;
+}
+
+header h1{
+font-size:2.8rem;
+font-weight:700;
+}
+
+header p{
+font-size:1.2rem;
+margin-top:10px;
+}
+
+/* NAVBAR FIXED */
+
+nav{
+background:#0f6f8c;
+padding:15px;
+position:sticky;
+top:0;
+left:0;
+width:100%;
+z-index:1000;
+display:flex;
+justify-content:center;
+flex-wrap:wrap;
+box-shadow:0 2px 10px rgba(0,0,0,0.1);
+}
+
+nav a{
+color:white;
+text-decoration:none;
+margin:5px 10px;
+padding:6px 15px;
+border-radius:20px;
+transition:0.3s;
+}
+
+nav a:hover{
+background:white;
+color:#0f6f8c;
+}
+
+/* MAIN */
+
+main{
+max-width:1000px;
+margin:auto;
+padding:30px 20px;
+margin-top:20px;
+}
+
+/* SECTIONS FIX */
+
+section{
+margin-bottom:30px;
+padding:25px;
+background:white;
+border-radius:15px;
+box-shadow:0 5px 20px rgba(0,0,0,0.05);
+scroll-margin-top:100px;
+}
+
+section h2{
+text-align:center;
+color:#0f6f8c;
+margin-bottom:20px;
+font-size:1.8rem;
+}
+
+/* CARDS */
+
+.card-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+}
+
+.card{
+background:white;
+padding:20px;
+border-radius:12px;
+text-align:center;
+transition:0.3s;
+opacity:0;
+transform:translateY(30px);
+}
+
+.card:hover{
+transform:translateY(-8px);
+box-shadow:0 10px 25px rgba(0,0,0,0.1);
+}
+
+.card-icon{
+font-size:30px;
+color:#0f6f8c;
+margin-bottom:10px;
+}
+
+.card-title{
+font-weight:600;
+margin-bottom:8px;
+font-size:1.1rem;
+}
+
+.card-desc{
+font-size:0.95rem;
+}
+
+.card-extra{
+margin-top:8px;
+color:#0f6f8c;
+font-weight:600;
+}
+
+/* CONTACT FORM */
+
+form{
+max-width:450px;
+margin:20px auto 0;
+}
+
+form input, form textarea{
+width:100%;
+padding:12px;
+margin-bottom:12px;
+border-radius:8px;
+border:1px solid #ccc;
+font-family:Montserrat;
+}
+
+form button{
+width:100%;
+padding:12px;
+border:none;
+background:#0f6f8c;
+color:white;
+font-weight:600;
+border-radius:8px;
+cursor:pointer;
+transition:0.3s;
+}
+
+form button:hover{
+background:#0c556b;
+}
+
+/* FOOTER */
+
+footer{
+background:#0f6f8c;
+color:white;
+text-align:center;
+padding:15px;
+margin-top:30px;
+}
+
+/* ANIMATION */
+
+@keyframes fadeUp{
+from{
+opacity:0;
+transform:translateY(30px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+.card.show{
+animation:fadeUp 0.7s forwards;
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+header h1{
+font-size:2rem;
+}
+
+section{
+padding:20px 15px;
+}
+
+}
+
+</style>
+
+</head>
+<body>
+
+<header>
+<h1>Harikrishna Dasari</h1>
+<p>Business Development Executive</p>
+</header>
+
+<nav>
+<a href="#about">About</a>
+<a href="#experience">Experience</a>
+<a href="#education">Education</a>
+<a href="#skills">Skills</a>
+<a href="#contact">Contact</a>
+</nav>
+
+<main>
+
+<section id="about">
+
+<h2>About</h2>
+
+<div class="card-grid">
+
+<div class="card">
+<div class="card-icon"><i class="fas fa-user"></i></div>
+<div class="card-title">Profile</div>
+<div class="card-desc">
+Business Development Executive with 2.5+ years of experience driving revenue growth, managing client relationships, and identifying business opportunities.
+</div>
+</div>
+
+<div class="card">
+<div class="card-icon"><i class="fas fa-bullseye"></i></div>
+<div class="card-title">Career Objective</div>
+<div class="card-desc">
+To work in a progressive organization where I can contribute to company growth using my business, communication, and strategic skills.
+</div>
+</div>
+
+</div>
+
+</section>
+
+<section id="experience">
+
+<h2>Experience</h2>
+
+<div class="card-grid">
+
+<div class="card">
+<div class="card-icon"><i class="fas fa-briefcase"></i></div>
+<div class="card-title">Business Development Executive</div>
+<div class="card-desc">
+WayToBegin, Hyderabad. Responsible for client acquisition, sales strategy, negotiations, and revenue growth.
+</div>
+<div class="card-extra">2.5 Years</div>
+</div>
+
+<div class="card">
+<div class="card-icon"><i class="fas fa-industry"></i></div>
+<div class="card-title">Lab Incharge</div>
+<div class="card-desc">
+Dharma Fashion Pvt Ltd, Hyderabad. Managed labeling operations, staff coordination, and inventory monitoring.
+</div>
+<div class="card-extra">1.5 Years</div>
+</div>
+
+</div>
+
+</section>
+
+<section id="education">
+
+<h2>Education</h2>
+
+<div class="card-grid">
+
+<div class="card">
+<div class="card-icon"><i class="fas fa-graduation-cap"></i></div>
+<div class="card-title">B.Tech (ECE)</div>
+<div class="card-desc">GVR&S College of Engineering and Technology</div>
+<div class="card-extra">CGPA: 7.02</div>
+</div>
+
+<div class="card">
+<div class="card-icon"><i class="fas fa-school"></i></div>
+<div class="card-title">Intermediate (MPC)</div>
+<div class="card-desc">Sai Co-operative College</div>
+<div class="card-extra">CGPA: 7.5</div>
+</div>
+
+<div class="card">
+<div class="card-icon"><i class="fas fa-book"></i></div>
+<div class="card-title">SSC</div>
+<div class="card-desc">ZPPHS High School</div>
+<div class="card-extra">CGPA: 7.2</div>
+</div>
+
+</div>
+
+</section>
+
+<section id="skills">
+
+<h2>Skills</h2>
+
+<div class="card-grid">
+
+<div class="card"><div class="card-icon"><i class="fas fa-chart-line"></i></div><div class="card-title">Business Development</div></div>
+
+<div class="card"><div class="card-icon"><i class="fas fa-handshake"></i></div><div class="card-title">Client Management</div></div>
+
+<div class="card"><div class="card-icon"><i class="fas fa-search"></i></div><div class="card-title">Market Research</div></div>
+
+<div class="card"><div class="card-icon"><i class="fas fa-comments"></i></div><div class="card-title">Communication</div></div>
+
+</div>
+
+</section>
+
+<section id="contact">
+
+<h2>Contact</h2>
+
+<div class="card-grid">
+
+<div class="card">
+<div class="card-icon"><i class="fas fa-envelope"></i></div>
+<div class="card-title">Email</div>
+<div class="card-desc">harikrishnadasari2219@gmail.com</div>
+</div>
+
+<div class="card">
+<div class="card-icon"><i class="fas fa-phone"></i></div>
+<div class="card-title">Phone</div>
+<div class="card-desc">9392680553</div>
+</div>
+
+</div>
+
+
+</section>
+
+</main>
+
+<footer>
+© 2026 Harikrishna Dasari | All Rights Reserved
+</footer>
+
+<script>
+
+const observer=new IntersectionObserver(entries=>{
+entries.forEach(entry=>{
+if(entry.isIntersecting){
+entry.target.classList.add("show");
+}
+});
+},{threshold:0.2});
+
+document.querySelectorAll(".card").forEach(card=>{
+observer.observe(card);
+});
+
+</script>
+
+</body>
+</html>
