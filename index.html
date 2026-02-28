@@ -1,402 +1,790 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Harikrishna Dasari | Portfolio</title>
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
-
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Harikrishna Dasari | Business Development Executive</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
 <style>
-
-/* RESET */
-
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
+:root {
+  --bg: #f8f6ff;
+  --card: #ffffff;
+  --dark: #160e2e;
+  --mid: #3b2c5e;
+  --muted: #8070aa;
+  --border: #ddd4f5;
+  --primary: #5b21b6;
+  --primary-lt: #ede9fe;
+  --gold: #b8860b;
+  --gold-lt: #fef8e1;
+  --gold-bright: #d4a017;
 }
 
-html{
-scroll-behavior:smooth;
-scroll-padding-top:100px;
-}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--dark);font-family:'Plus Jakarta Sans',sans-serif;font-weight:400;line-height:1.7;overflow-x:hidden}
+::-webkit-scrollbar{width:4px}
+::-webkit-scrollbar-track{background:var(--bg)}
+::-webkit-scrollbar-thumb{background:var(--primary);border-radius:8px}
 
-body{
-font-family:'Montserrat',sans-serif;
-background:linear-gradient(120deg,#f4fbff,#f8f7ff);
-color:#26324a;
-line-height:1.6;
-}
-
-header{
-height:90vh;
-background:linear-gradient(rgba(0,0,0,0.55),rgba(0,0,0,0.55)),
-url('hari.jpeg') center/cover no-repeat;
-display:flex;
-flex-direction:column;
-justify-content:center;
-align-items:center;
-color:white;
-text-align:center;
-padding:20px;
-}
-
-header h1{
-font-size:2.8rem;
-font-weight:700;
-}
-
-header p{
-font-size:1.2rem;
-margin-top:10px;
-}
-
-/* NAVBAR FIXED */
-
+/* ═══ NAV ═══ */
 nav{
-background:#0f6f8c;
-padding:15px;
-position:sticky;
-top:0;
-left:0;
-width:100%;
-z-index:1000;
-display:flex;
-justify-content:center;
-flex-wrap:wrap;
-box-shadow:0 2px 10px rgba(0,0,0,0.1);
+  position:sticky;top:0;z-index:300;
+  background:rgba(248,246,255,.95);backdrop-filter:blur(16px);
+  border-bottom:1px solid var(--border);
+  display:flex;align-items:center;justify-content:space-between;
+  padding:14px 56px;
+}
+.nav-logo{
+  font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:700;
+  color:var(--dark);
+}
+.nav-logo span{color:var(--gold)}
+.nav-links{display:flex;gap:28px;list-style:none}
+.nav-links a{
+  font-size:.72rem;font-weight:600;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--muted);text-decoration:none;transition:color .3s;
+}
+.nav-links a:hover,.nav-links a.active{color:var(--primary)}
+
+/* ═══ HERO ═══ */
+.hero{
+  background:linear-gradient(135deg,#150b30 0%,#2e0f7a 50%,#1e0a50 100%);
+  color:#fff;display:grid;grid-template-columns:1.2fr .8fr;
+  min-height:90vh;overflow:hidden;position:relative;
+}
+.hero::before{
+  content:'';position:absolute;inset:0;
+  background-image:radial-gradient(rgba(255,255,255,.06) 1px,transparent 1px);
+  background-size:28px 28px;pointer-events:none;z-index:0;
+}
+.hero::after{
+  content:'HD';font-family:'Playfair Display',serif;
+  font-size:22rem;font-weight:900;color:rgba(255,255,255,.025);
+  position:absolute;right:-30px;bottom:-60px;line-height:1;pointer-events:none;z-index:0;
+}
+.hero-left{
+  padding:96px 56px 72px;display:flex;flex-direction:column;
+  justify-content:center;position:relative;z-index:1;
+}
+.available-badge{
+  display:inline-flex;align-items:center;gap:8px;
+  background:rgba(212,160,23,.15);border:1px solid rgba(212,160,23,.4);
+  padding:6px 16px;border-radius:100px;margin-bottom:28px;width:fit-content;
+}
+.badge-dot{width:7px;height:7px;border-radius:50%;background:var(--gold-bright);animation:pulse 2s ease-in-out infinite}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.4;transform:scale(.75)}}
+.available-badge span{font-size:.68rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--gold-bright)}
+
+.hero h1{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(3rem,6vw,5.2rem);font-weight:900;
+  line-height:1.0;letter-spacing:-.025em;margin-bottom:18px;
+}
+.hero h1 .gold{color:var(--gold-bright)}
+.hero-designation{
+  font-size:.88rem;font-weight:600;letter-spacing:.12em;
+  text-transform:uppercase;color:rgba(255,255,255,.5);margin-bottom:24px;
+}
+.hero-summary{
+  font-size:.95rem;color:rgba(255,255,255,.5);
+  max-width:460px;margin-bottom:40px;line-height:1.8;font-weight:300;
+}
+.hero-summary strong{color:rgba(255,255,255,.8);font-weight:600}
+
+.contact-list{display:flex;flex-direction:column;gap:10px}
+.c-row{display:flex;align-items:center;gap:11px;font-size:.84rem;color:rgba(255,255,255,.55)}
+.c-icon{
+  width:30px;height:30px;background:rgba(255,255,255,.07);
+  border-radius:8px;display:flex;align-items:center;justify-content:center;
+  font-size:.8rem;flex-shrink:0;
+}
+.c-row a{color:inherit;text-decoration:none;transition:color .25s}
+.c-row a:hover{color:var(--gold-bright)}
+
+/* Hero right stats */
+.hero-right{
+  border-left:1px solid rgba(255,255,255,.06);
+  background:rgba(255,255,255,.02);
+  display:flex;flex-direction:column;justify-content:center;
+  padding:80px 48px;position:relative;z-index:1;
+}
+.stat-block{
+  padding:28px 0;border-bottom:1px solid rgba(255,255,255,.07);
+}
+.stat-block:last-child{border-bottom:none}
+.stat-num{
+  font-family:'Playfair Display',serif;font-size:3.2rem;font-weight:700;
+  color:var(--gold-bright);line-height:1;margin-bottom:6px;
+}
+.stat-title{font-size:.7rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.35)}
+.stat-sub{font-size:.76rem;color:rgba(255,255,255,.25);margin-top:3px}
+
+/* ═══ MAIN WRAPPER ═══ */
+.wrap{max-width:1100px;margin:0 auto;padding:0 56px}
+section{padding:80px 0;border-bottom:1px solid var(--border)}
+section:last-child{border-bottom:none}
+
+.eyebrow{display:flex;align-items:center;gap:12px;margin-bottom:10px}
+.eyebrow-bar{width:28px;height:2.5px;background:linear-gradient(to right,var(--primary),var(--gold));border-radius:2px}
+.eyebrow-text{font-size:.67rem;font-weight:700;letter-spacing:.24em;text-transform:uppercase;color:var(--primary)}
+
+h2{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(1.9rem,3.5vw,2.7rem);font-weight:700;
+  color:var(--dark);line-height:1.12;letter-spacing:-.015em;margin-bottom:48px;
 }
 
-nav a{
-color:white;
-text-decoration:none;
-margin:5px 10px;
-padding:6px 15px;
-border-radius:20px;
-transition:0.3s;
+/* ═══ OBJECTIVE ═══ */
+.obj-card{
+  background:var(--card);border:1px solid var(--border);border-radius:18px;
+  padding:44px 50px;display:flex;gap:32px;align-items:stretch;
+  box-shadow:0 4px 24px rgba(91,33,182,.05);
+}
+.obj-stripe{
+  width:4px;flex-shrink:0;min-height:80px;
+  background:linear-gradient(to bottom,var(--primary),var(--gold));border-radius:4px;
+}
+.obj-text{
+  font-family:'Playfair Display',serif;font-size:1.18rem;
+  color:var(--mid);line-height:1.8;font-weight:400;
 }
 
-nav a:hover{
-background:white;
-color:#0f6f8c;
+/* ═══ EXPERIENCE ═══ */
+.exp-stack{display:flex;flex-direction:column;gap:24px}
+.exp-card{
+  background:var(--card);border:1px solid var(--border);border-radius:20px;
+  padding:40px 44px;position:relative;overflow:hidden;
+  transition:transform .35s,box-shadow .35s;
+  box-shadow:0 2px 16px rgba(91,33,182,.04);
+}
+.exp-card::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:3.5px;
+  background:linear-gradient(90deg,var(--primary),var(--gold));border-radius:20px 20px 0 0;
+}
+.exp-card:hover{transform:translateY(-5px);box-shadow:0 18px 52px rgba(91,33,182,.12)}
+
+.exp-top{display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:14px;margin-bottom:10px}
+.exp-company{font-family:'Playfair Display',serif;font-size:1.45rem;font-weight:700;color:var(--dark)}
+.exp-place{font-size:.76rem;color:var(--muted);font-weight:500;margin-top:3px}
+
+.badge-dur{
+  background:var(--primary-lt);color:var(--primary);
+  border:1px solid rgba(91,33,182,.2);
+  font-size:.7rem;font-weight:700;letter-spacing:.1em;
+  text-transform:uppercase;padding:6px 16px;border-radius:100px;white-space:nowrap;
+}
+.badge-role{
+  display:inline-flex;align-items:center;gap:7px;
+  background:var(--gold-lt);color:var(--gold);
+  border:1px solid rgba(184,134,11,.25);
+  font-size:.7rem;font-weight:700;letter-spacing:.1em;
+  text-transform:uppercase;padding:7px 16px;border-radius:100px;margin-bottom:26px;
+}
+.exp-ul{
+  list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:10px 30px;
+}
+.exp-ul li{
+  font-size:.86rem;color:var(--mid);
+  padding-left:18px;position:relative;line-height:1.6;
+}
+.exp-ul li::before{
+  content:'▸';position:absolute;left:0;top:3px;
+  color:var(--primary);font-size:.66rem;
 }
 
-/* MAIN */
+/* ═══ PROJECT ═══ */
+.proj-card{
+  background:var(--card);border:1px solid var(--border);border-radius:20px;
+  padding:42px 46px;position:relative;overflow:hidden;
+  transition:transform .35s,box-shadow .35s;
+  box-shadow:0 2px 16px rgba(91,33,182,.04);
+}
+.proj-card::before{
+  content:'';position:absolute;left:0;top:0;bottom:0;width:4.5px;
+  background:linear-gradient(to bottom,var(--gold),var(--primary));
+  border-radius:4px 0 0 4px;
+}
+.proj-card:hover{transform:translateY(-5px);box-shadow:0 18px 52px rgba(91,33,182,.12)}
 
-main{
-max-width:1000px;
-margin:auto;
-padding:30px 20px;
-margin-top:20px;
+.proj-title{
+  font-family:'Playfair Display',serif;
+  font-size:1.32rem;font-weight:700;color:var(--dark);margin-bottom:14px;
+}
+.proj-chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px}
+.proj-chip{
+  font-size:.69rem;font-weight:600;background:var(--primary-lt);
+  color:var(--primary);border:1px solid rgba(91,33,182,.2);
+  padding:4px 12px;border-radius:6px;letter-spacing:.05em;
+}
+.proj-ul{list-style:none;display:flex;flex-direction:column;gap:10px}
+.proj-ul li{
+  font-size:.87rem;color:var(--mid);
+  padding-left:18px;position:relative;line-height:1.6;
+}
+.proj-ul li::before{
+  content:'▸';position:absolute;left:0;top:3px;
+  color:var(--gold);font-size:.66rem;
 }
 
-/* SECTIONS FIX */
+/* ═══ CERTIFICATIONS ═══ */
+.cert-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.cert-card{
+  background:var(--card);border:1px solid var(--border);border-radius:16px;
+  padding:28px 30px;display:flex;align-items:flex-start;gap:18px;
+  transition:all .3s;box-shadow:0 2px 12px rgba(91,33,182,.04);
+}
+.cert-card:hover{border-color:rgba(91,33,182,.3);transform:translateY(-3px);box-shadow:0 12px 36px rgba(91,33,182,.1)}
+.cert-ico{
+  width:48px;height:48px;border-radius:13px;
+  background:var(--primary-lt);border:1px solid rgba(91,33,182,.18);
+  display:flex;align-items:center;justify-content:center;font-size:1.3rem;flex-shrink:0;
+}
+.cert-title{font-size:.9rem;font-weight:700;color:var(--dark);margin-bottom:5px;line-height:1.4}
+.cert-from{font-size:.75rem;color:var(--muted);font-style:italic}
 
-section{
-margin-bottom:30px;
-padding:25px;
-background:white;
-border-radius:15px;
-box-shadow:0 5px 20px rgba(0,0,0,0.05);
-scroll-margin-top:100px;
+/* ═══ SKILLS ═══ */
+.skills-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.sk-card{
+  background:var(--card);border:1px solid var(--border);border-radius:16px;
+  padding:28px;transition:all .3s;position:relative;overflow:hidden;
+  box-shadow:0 2px 12px rgba(91,33,182,.03);
+}
+.sk-card::after{
+  content:'';position:absolute;bottom:0;left:0;right:0;height:2.5px;
+  background:linear-gradient(to right,var(--primary),var(--gold));
+  transform:scaleX(0);transform-origin:left;transition:transform .35s;
+}
+.sk-card:hover{transform:translateY(-4px);box-shadow:0 14px 40px rgba(91,33,182,.1);border-color:rgba(91,33,182,.2)}
+.sk-card:hover::after{transform:scaleX(1)}
+.sk-icon{font-size:1.5rem;margin-bottom:13px;display:block}
+.sk-card h3{font-size:.8rem;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--dark);margin-bottom:14px}
+.sk-tags{display:flex;flex-wrap:wrap;gap:7px}
+.sk-tag{
+  font-size:.71rem;font-weight:500;
+  background:var(--bg);border:1px solid var(--border);
+  color:var(--mid);padding:4px 11px;border-radius:6px;
+  transition:all .25s;cursor:default;
+}
+.sk-tag:hover{background:var(--primary-lt);border-color:rgba(91,33,182,.25);color:var(--primary)}
+
+/* ═══ STRENGTHS & HOBBIES ═══ */
+.sh-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.sh-card{
+  background:var(--card);border:1px solid var(--border);border-radius:18px;
+  padding:36px 38px;transition:all .3s;
+  box-shadow:0 2px 14px rgba(91,33,182,.04);
+}
+.sh-card:hover{transform:translateY(-4px);box-shadow:0 14px 42px rgba(91,33,182,.1)}
+.sh-head{display:flex;align-items:center;gap:14px;margin-bottom:26px;padding-bottom:18px;border-bottom:1px solid var(--border)}
+.sh-ico{
+  width:46px;height:46px;border-radius:13px;
+  display:flex;align-items:center;justify-content:center;font-size:1.3rem;
+}
+.sh-ico-purple{background:var(--primary-lt);border:1px solid rgba(91,33,182,.2)}
+.sh-ico-gold{background:var(--gold-lt);border:1px solid rgba(184,134,11,.22)}
+.sh-card h3{font-family:'Playfair Display',serif;font-size:1.15rem;font-weight:700;color:var(--dark)}
+.sh-ul{list-style:none;display:flex;flex-direction:column;gap:13px}
+.sh-ul li{display:flex;align-items:flex-start;gap:12px;font-size:.87rem;color:var(--mid);line-height:1.55}
+.sh-dot{
+  width:8px;height:8px;border-radius:50%;flex-shrink:0;margin-top:5px;
+}
+.dot-purple{background:var(--primary)}
+.dot-gold{background:var(--gold)}
+
+/* ═══ EDUCATION ═══ */
+.edu-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.edu-card{
+  background:var(--card);border:1px solid var(--border);border-radius:18px;
+  padding:30px 26px;text-align:center;position:relative;overflow:hidden;
+  transition:all .3s;box-shadow:0 2px 12px rgba(91,33,182,.04);
+}
+.edu-card::after{
+  content:'';position:absolute;bottom:0;left:0;right:0;height:3px;
+  background:linear-gradient(to right,var(--primary),var(--gold));
+  opacity:0;transition:opacity .3s;
+}
+.edu-card:hover{transform:translateY(-5px);box-shadow:0 16px 46px rgba(91,33,182,.12)}
+.edu-card:hover::after{opacity:1}
+.edu-ico{
+  width:46px;height:46px;border-radius:13px;
+  background:var(--primary-lt);border:1px solid rgba(91,33,182,.18);
+  display:flex;align-items:center;justify-content:center;font-size:1.2rem;
+  margin:0 auto 16px;
+}
+.edu-yr{font-size:.68rem;font-weight:700;letter-spacing:.17em;text-transform:uppercase;color:var(--muted);margin-bottom:8px}
+.edu-card h3{font-family:'Playfair Display',serif;font-size:.98rem;font-weight:700;color:var(--dark);margin-bottom:5px;line-height:1.3}
+.edu-inst{font-size:.78rem;color:var(--muted);margin-bottom:5px;line-height:1.4}
+.edu-board{font-size:.71rem;color:var(--muted);font-style:italic;margin-bottom:16px}
+.edu-score{
+  display:inline-flex;align-items:center;gap:5px;
+  background:var(--gold-lt);border:1px solid rgba(184,134,11,.25);
+  color:var(--gold);font-size:.76rem;font-weight:700;
+  padding:5px 14px;border-radius:100px;
 }
 
-section h2{
-text-align:center;
-color:#0f6f8c;
-margin-bottom:20px;
-font-size:1.8rem;
+/* ═══ ACHIEVEMENTS ═══ */
+.ach-list{display:flex;flex-direction:column;gap:16px}
+.ach-card{
+  background:var(--card);border:1px solid var(--border);border-radius:16px;
+  padding:24px 28px;display:flex;align-items:flex-start;gap:20px;
+  transition:all .3s;box-shadow:0 2px 12px rgba(91,33,182,.03);
 }
-
-/* CARDS */
-
-.card-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:20px;
+.ach-card:hover{border-color:rgba(91,33,182,.3);transform:translateX(5px);box-shadow:0 8px 32px rgba(91,33,182,.09)}
+.ach-ico{
+  width:46px;height:46px;border-radius:12px;
+  background:var(--gold-lt);border:1px solid rgba(184,134,11,.22);
+  display:flex;align-items:center;justify-content:center;font-size:1.25rem;flex-shrink:0;
 }
+.ach-title{font-size:.93rem;font-weight:700;color:var(--dark);margin-bottom:5px;line-height:1.35}
+.ach-desc{font-size:.83rem;color:var(--muted);line-height:1.6}
 
-.card{
-background:white;
-padding:20px;
-border-radius:12px;
-text-align:center;
-transition:0.3s;
-opacity:0;
-transform:translateY(30px);
+/* ═══ PERSONAL PROFILE ═══ */
+.personal-card{
+  background:var(--card);border:1px solid var(--border);border-radius:20px;
+  padding:44px 48px;box-shadow:0 2px 16px rgba(91,33,182,.05);
+  display:grid;grid-template-columns:1fr 1fr;gap:32px;
 }
-
-.card:hover{
-transform:translateY(-8px);
-box-shadow:0 10px 25px rgba(0,0,0,0.1);
+.personal-col h3{
+  font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;
+  color:var(--dark);margin-bottom:20px;padding-bottom:12px;
+  border-bottom:2px solid var(--border);
 }
-
-.card-icon{
-font-size:30px;
-color:#0f6f8c;
-margin-bottom:10px;
+.p-row{display:flex;gap:12px;margin-bottom:14px;align-items:baseline}
+.p-label{
+  font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--muted);min-width:120px;flex-shrink:0;
 }
+.p-value{font-size:.88rem;color:var(--mid);font-weight:500}
+.p-value.highlight{color:var(--primary);font-weight:600}
 
-.card-title{
-font-weight:600;
-margin-bottom:8px;
-font-size:1.1rem;
-}
-
-.card-desc{
-font-size:0.95rem;
-}
-
-.card-extra{
-margin-top:8px;
-color:#0f6f8c;
-font-weight:600;
-}
-
-/* CONTACT FORM */
-
-form{
-max-width:450px;
-margin:20px auto 0;
-}
-
-form input, form textarea{
-width:100%;
-padding:12px;
-margin-bottom:12px;
-border-radius:8px;
-border:1px solid #ccc;
-font-family:Montserrat;
-}
-
-form button{
-width:100%;
-padding:12px;
-border:none;
-background:#0f6f8c;
-color:white;
-font-weight:600;
-border-radius:8px;
-cursor:pointer;
-transition:0.3s;
-}
-
-form button:hover{
-background:#0c556b;
-}
-
-/* FOOTER */
-
+/* ═══ FOOTER ═══ */
 footer{
-background:#0f6f8c;
-color:white;
-text-align:center;
-padding:15px;
-margin-top:30px;
+  background:linear-gradient(135deg,#150b30 0%,#2e0f7a 100%);
+  color:rgba(255,255,255,.45);
+  display:flex;align-items:center;justify-content:space-between;
+  flex-wrap:wrap;gap:20px;padding:44px 56px;
 }
-
-/* ANIMATION */
-
-@keyframes fadeUp{
-from{
-opacity:0;
-transform:translateY(30px);
+.fl-name{
+  font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:700;
+  color:rgba(255,255,255,.9);margin-bottom:4px;
 }
-to{
-opacity:1;
-transform:translateY(0);
+.fl-name span{color:var(--gold-bright)}
+.fl-sub{font-size:.74rem;letter-spacing:.07em;color:rgba(255,255,255,.32)}
+.footer-right{display:flex;flex-direction:column;align-items:flex-end;gap:7px}
+.footer-right a{font-size:.8rem;color:rgba(255,255,255,.42);text-decoration:none;transition:color .3s}
+.footer-right a:hover{color:var(--gold-bright)}
+.footer-right span{font-size:.72rem;color:rgba(255,255,255,.22)}
+
+/* ═══ ANIMATIONS ═══ */
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .65s ease,transform .65s ease}
+.reveal.visible{opacity:1;transform:none}
+
+/* ═══ RESPONSIVE ═══ */
+@media(max-width:900px){
+  nav{padding:13px 20px}
+  .nav-links{display:none}
+  .hero{grid-template-columns:1fr}
+  .hero-right{display:none}
+  .hero-left{padding:88px 22px 56px}
+  .hero::after{display:none}
+  .wrap{padding:0 22px}
+  .exp-ul{grid-template-columns:1fr}
+  .skills-grid{grid-template-columns:1fr 1fr}
+  .edu-grid{grid-template-columns:1fr}
+  .sh-grid{grid-template-columns:1fr}
+  .cert-grid{grid-template-columns:1fr}
+  .personal-card{grid-template-columns:1fr}
+  footer{padding:36px 22px;flex-direction:column;align-items:flex-start}
+  .footer-right{align-items:flex-start}
 }
+@media(max-width:540px){
+  .skills-grid{grid-template-columns:1fr}
+  .exp-card,.proj-card,.obj-card{padding:28px 22px}
 }
-
-.card.show{
-animation:fadeUp 0.7s forwards;
-}
-
-/* MOBILE */
-
-@media(max-width:768px){
-
-header h1{
-font-size:2rem;
-}
-
-section{
-padding:20px 15px;
-}
-
-}
-
 </style>
-
 </head>
 <body>
 
-<header>
-<h1>Harikrishna Dasari</h1>
-<p>Business Development Executive</p>
-</header>
-
+<!-- ═══ NAV ═══ -->
 <nav>
-<a href="#about">About</a>
-<a href="#experience">Experience</a>
-<a href="#education">Education</a>
-<a href="#skills">Skills</a>
-<a href="#contact">Contact</a>
+  <div class="nav-logo">Hari<span>krishna</span> Dasari</div>
+  <ul class="nav-links">
+    <li><a href="#objective">Objective</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#project">Project</a></li>
+    <li><a href="#certifications">Certifications</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#education">Education</a></li>
+    <li><a href="#achievements">Achievements</a></li>
+  </ul>
 </nav>
 
-<main>
+<!-- ═══ HERO ═══ -->
+<div class="hero">
+  <div class="hero-left">
+    <div class="available-badge">
+      <div class="badge-dot"></div>
+      <span>Business Development · Sales &amp; Growth</span>
+    </div>
+    <h1>Hari<span class="gold">krishna</span><br>Dasari</h1>
+    <p class="hero-designation">Business Development Executive</p>
+    <p class="hero-summary">
+      Dynamic professional with <strong>4+ years</strong> of combined experience driving revenue growth, managing client relationships, and operational excellence across multiple industries in Hyderabad.
+    </p>
+    <div class="contact-list">
+      <div class="c-row">
+        <div class="c-icon">📞</div>
+        <span>9392680553</span>
+      </div>
+      <div class="c-row">
+        <div class="c-icon">✉️</div>
+        <a href="mailto:harikrishnadasari2219@gmail.com">harikrishnadasari2219@gmail.com</a>
+      </div>
+      <div class="c-row">
+        <div class="c-icon">🎓</div>
+        <span>B.Tech (ECE) — JNTU Kakinada, 2023 · 7.02 CGPA</span>
+      </div>
+      <div class="c-row">
+        <div class="c-icon">🎂</div>
+        <span>22 / 05 / 2000 &nbsp;·&nbsp; Male</span>
+      </div>
+    </div>
+  </div>
 
-<section id="about">
-
-<h2>About</h2>
-
-<div class="card-grid">
-
-<div class="card">
-<div class="card-icon"><i class="fas fa-user"></i></div>
-<div class="card-title">Profile</div>
-<div class="card-desc">
-Business Development Executive with 2.5+ years of experience driving revenue growth, managing client relationships, and identifying business opportunities.
-</div>
-</div>
-
-<div class="card">
-<div class="card-icon"><i class="fas fa-bullseye"></i></div>
-<div class="card-title">Career Objective</div>
-<div class="card-desc">
-To work in a progressive organization where I can contribute to company growth using my business, communication, and strategic skills.
-</div>
-</div>
-
-</div>
-
-</section>
-
-<section id="experience">
-
-<h2>Experience</h2>
-
-<div class="card-grid">
-
-<div class="card">
-<div class="card-icon"><i class="fas fa-briefcase"></i></div>
-<div class="card-title">Business Development Executive</div>
-<div class="card-desc">
-WayToBegin, Hyderabad. Responsible for client acquisition, sales strategy, negotiations, and revenue growth.
-</div>
-<div class="card-extra">2.5 Years</div>
-</div>
-
-<div class="card">
-<div class="card-icon"><i class="fas fa-industry"></i></div>
-<div class="card-title">Lab Incharge</div>
-<div class="card-desc">
-Dharma Fashion Pvt Ltd, Hyderabad. Managed labeling operations, staff coordination, and inventory monitoring.
-</div>
-<div class="card-extra">1.5 Years</div>
-</div>
-
-</div>
-
-</section>
-
-<section id="education">
-
-<h2>Education</h2>
-
-<div class="card-grid">
-
-<div class="card">
-<div class="card-icon"><i class="fas fa-graduation-cap"></i></div>
-<div class="card-title">B.Tech (ECE)</div>
-<div class="card-desc">GVR&S College of Engineering and Technology</div>
-<div class="card-extra">CGPA: 7.02</div>
+  <div class="hero-right">
+    <div class="stat-block">
+      <div class="stat-num">2.5</div>
+      <div class="stat-title">Years — Business Dev</div>
+      <div class="stat-sub">WayToBegin, Hyderabad</div>
+    </div>
+    <div class="stat-block">
+      <div class="stat-num">1.5</div>
+      <div class="stat-title">Years — Operations</div>
+      <div class="stat-sub">Dharma Fashion Pvt. Co.</div>
+    </div>
+    <div class="stat-block">
+      <div class="stat-num">7.02</div>
+      <div class="stat-title">B.Tech CGPA</div>
+      <div class="stat-sub">ECE · JNTU Kakinada</div>
+    </div>
+    <div class="stat-block">
+      <div class="stat-num">1</div>
+      <div class="stat-title">Hardware Project</div>
+      <div class="stat-sub">Blind Stick — Ultrasonic</div>
+    </div>
+  </div>
 </div>
 
-<div class="card">
-<div class="card-icon"><i class="fas fa-school"></i></div>
-<div class="card-title">Intermediate (MPC)</div>
-<div class="card-desc">Sai Co-operative College</div>
-<div class="card-extra">CGPA: 7.5</div>
+<!-- ═══ MAIN ═══ -->
+<div class="wrap">
+
+  <!-- OBJECTIVE -->
+  <section id="objective">
+    <div class="eyebrow"><div class="eyebrow-bar"></div><span class="eyebrow-text">Career Objective</span></div>
+    <h2>Driven to Create Impact<br>in Every Role</h2>
+    <div class="obj-card reveal">
+      <div class="obj-stripe"></div>
+      <p class="obj-text">
+        To work in a progressive organization where I can showcase my skills by taking a challenging position and contribute meaningfully to the company's growth — bringing strategic thinking, client management expertise, and operational discipline to every opportunity.
+      </p>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section id="experience">
+    <div class="eyebrow"><div class="eyebrow-bar"></div><span class="eyebrow-text">Work Experience</span></div>
+    <h2>Professional<br>Experience</h2>
+    <div class="exp-stack">
+
+      <!-- WayToBegin -->
+      <div class="exp-card reveal">
+        <div class="exp-top">
+          <div>
+            <div class="exp-company">WayToBegin</div>
+            <div class="exp-place">📍 Hyderabad</div>
+          </div>
+          <span class="badge-dur">⏱ 2.5 Years</span>
+        </div>
+        <div class="badge-role">🤝 Business Development Executive</div>
+        <ul class="exp-ul">
+          <li>Developed and executed strategic sales plans to drive business growth and revenue</li>
+          <li>Managed client relationships, ensuring customer satisfaction and long-term retention</li>
+          <li>Conducted market research to identify new business opportunities and industry trends</li>
+          <li>Negotiated contracts and closed high-value deals with key clients</li>
+          <li>Collaborated with cross-functional teams to achieve shared business objectives</li>
+          <li>Delivered compelling presentations and proposals to potential clients, showcasing product/service benefits</li>
+        </ul>
+      </div>
+
+      <!-- Dharma Fashion -->
+      <div class="exp-card reveal">
+        <div class="exp-top">
+          <div>
+            <div class="exp-company">Dharma Fashion Pvt. Co.</div>
+            <div class="exp-place">📍 Hyderabad</div>
+          </div>
+          <span class="badge-dur">⏱ 1.5 Years</span>
+        </div>
+        <div class="badge-role">🗂️ Lab Incharge — Repacking &amp; Labeling</div>
+        <ul class="exp-ul">
+          <li>Coordinated with production, quality, and warehouse teams to meet dispatch timelines</li>
+          <li>Monitored inventory levels of packaging and labeling materials to avoid shortages</li>
+          <li>Trained and guided lab staff on standard operating procedures and safety practices</li>
+          <li>Identified and resolved labeling errors to minimize rework and product rejection</li>
+          <li>Maintained a clean, organized, and compliant lab environment at all times</li>
+        </ul>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- PROJECT -->
+  <section id="project">
+    <div class="eyebrow"><div class="eyebrow-bar"></div><span class="eyebrow-text">Academic Project</span></div>
+    <h2>Engineering Project</h2>
+    <div class="proj-card reveal">
+      <div class="proj-title">🔦 Blind Stick Using Ultrasonic Sensors</div>
+      <div class="proj-chips">
+        <span class="proj-chip">Arduino</span>
+        <span class="proj-chip">Ultrasonic Sensor</span>
+        <span class="proj-chip">Embedded Systems</span>
+        <span class="proj-chip">Voice Output Module</span>
+        <span class="proj-chip">Blind Stick Hardware</span>
+      </div>
+      <ul class="proj-ul">
+        <li>Introduced a smart navigation device focused on providing real-time voice output for obstacle detection, designed to assist visually impaired individuals</li>
+        <li>Implemented prevention and navigation system using ultrasonic sensors for accurate distance measurement and obstacle avoidance</li>
+        <li>Core hardware stack: Arduino microcontroller, Ultrasonic Sensor, and Blind Stick assembly integrated for seamless operation</li>
+        <li>Designed for safe and independent navigation — empowering users with reliable, hands-free guidance</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- CERTIFICATIONS -->
+  <section id="certifications">
+    <div class="eyebrow"><div class="eyebrow-bar"></div><span class="eyebrow-text">Certifications</span></div>
+    <h2>Certifications &amp;<br>Learning Credentials</h2>
+    <div class="cert-grid">
+      <div class="cert-card reveal">
+        <div class="cert-ico">🏛️</div>
+        <div>
+          <div class="cert-title">Embedded System Development using Python</div>
+          <div class="cert-from">Sri Rangamaatha Institute of Engineering &amp; Technology, Coimbatore</div>
+        </div>
+      </div>
+      <div class="cert-card reveal">
+        <div class="cert-ico">🌐</div>
+        <div>
+          <div class="cert-title">What is IoT — Certificate of Completion</div>
+          <div class="cert-from">Great Learning</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills">
+    <div class="eyebrow"><div class="eyebrow-bar"></div><span class="eyebrow-text">Skills</span></div>
+    <h2>Core Competencies &amp;<br>Technical Skills</h2>
+    <div class="skills-grid">
+      <div class="sk-card reveal">
+        <span class="sk-icon">🤝</span>
+        <h3>Business Development</h3>
+        <div class="sk-tags">
+          <span class="sk-tag">Sales Strategy</span>
+          <span class="sk-tag">Lead Generation</span>
+          <span class="sk-tag">Deal Closure</span>
+          <span class="sk-tag">Revenue Growth</span>
+          <span class="sk-tag">B2B Sales</span>
+        </div>
+      </div>
+      <div class="sk-card reveal">
+        <span class="sk-icon">👥</span>
+        <h3>Client Management</h3>
+        <div class="sk-tags">
+          <span class="sk-tag">Client Relations</span>
+          <span class="sk-tag">Customer Retention</span>
+          <span class="sk-tag">Customer Satisfaction</span>
+          <span class="sk-tag">Contract Negotiation</span>
+        </div>
+      </div>
+      <div class="sk-card reveal">
+        <span class="sk-icon">💻</span>
+        <h3>Technical Skills</h3>
+        <div class="sk-tags">
+          <span class="sk-tag">Python (Basic)</span>
+          <span class="sk-tag">C Programming (Basic)</span>
+          <span class="sk-tag">MS-Office</span>
+          <span class="sk-tag">Embedded Systems</span>
+        </div>
+      </div>
+      <div class="sk-card reveal">
+        <span class="sk-icon">📊</span>
+        <h3>Market Research</h3>
+        <div class="sk-tags">
+          <span class="sk-tag">Competitor Analysis</span>
+          <span class="sk-tag">Industry Trends</span>
+          <span class="sk-tag">Opportunity Mapping</span>
+          <span class="sk-tag">Business Strategy</span>
+        </div>
+      </div>
+      <div class="sk-card reveal">
+        <span class="sk-icon">🗂️</span>
+        <h3>Operations &amp; Lab</h3>
+        <div class="sk-tags">
+          <span class="sk-tag">Inventory Management</span>
+          <span class="sk-tag">Quality Control</span>
+          <span class="sk-tag">SOP Adherence</span>
+          <span class="sk-tag">Team Training</span>
+          <span class="sk-tag">Dispatch Planning</span>
+        </div>
+      </div>
+      <div class="sk-card reveal">
+        <span class="sk-icon">🎯</span>
+        <h3>Soft Skills</h3>
+        <div class="sk-tags">
+          <span class="sk-tag">Presentations</span>
+          <span class="sk-tag">Proposals</span>
+          <span class="sk-tag">Stakeholder Engagement</span>
+          <span class="sk-tag">Cross-team Collaboration</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STRENGTHS & HOBBIES -->
+  <section id="strengths">
+    <div class="eyebrow"><div class="eyebrow-bar"></div><span class="eyebrow-text">Strengths &amp; Hobbies</span></div>
+    <h2>What Defines Me<br>Beyond Work</h2>
+    <div class="sh-grid">
+      <div class="sh-card reveal">
+        <div class="sh-head">
+          <div class="sh-ico sh-ico-purple">💪</div>
+          <h3>Strengths</h3>
+        </div>
+        <ul class="sh-ul">
+          <li><div class="sh-dot dot-purple"></div>Pressure Handling — stays calm and effective under tight deadlines and high-pressure situations</li>
+          <li><div class="sh-dot dot-purple"></div>Creative in any role — brings fresh, innovative perspectives to challenges and problem-solving</li>
+          <li><div class="sh-dot dot-purple"></div>Team work — highly collaborative and supportive in group environments and cross-functional settings</li>
+          <li><div class="sh-dot dot-purple"></div>Time Management — efficiently prioritizes tasks to deliver the best results on schedule</li>
+        </ul>
+      </div>
+      <div class="sh-card reveal">
+        <div class="sh-head">
+          <div class="sh-ico sh-ico-gold">🎨</div>
+          <h3>Hobbies</h3>
+        </div>
+        <ul class="sh-ul">
+          <li><div class="sh-dot dot-gold"></div>Crafting — enjoys creative hands-on projects and DIY activities</li>
+          <li><div class="sh-dot dot-gold"></div>Photography &amp; Video Editing — passionate about visual storytelling and content creation</li>
+          <li><div class="sh-dot dot-gold"></div>Volleyball — School &amp; College Captain (2015–2017), active competitor at Nellore &amp; Hyderabad</li>
+          <li><div class="sh-dot dot-gold"></div>Badminton &amp; Cricket — active multi-sport participant at school and college level</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- EDUCATION -->
+  <section id="education">
+    <div class="eyebrow"><div class="eyebrow-bar"></div><span class="eyebrow-text">Education</span></div>
+    <h2>Academic<br>Qualifications</h2>
+    <div class="edu-grid">
+      <div class="edu-card reveal">
+        <div class="edu-ico">🎓</div>
+        <div class="edu-yr">2019 – 2023</div>
+        <h3>B.Tech — Electronics &amp; Communication Engineering</h3>
+        <p class="edu-inst">GVR&amp;S College of Engineering &amp; Technology, Guntur</p>
+        <p class="edu-board">JNTU Kakinada</p>
+        <span class="edu-score">⭐ 7.02 CGPA</span>
+      </div>
+      <div class="edu-card reveal">
+        <div class="edu-ico">📘</div>
+        <div class="edu-yr">2017 – 2019</div>
+        <h3>Intermediate — MPC</h3>
+        <p class="edu-inst">Sai Co-operative College, Kavali</p>
+        <p class="edu-board">Board of Andhra Pradesh</p>
+        <span class="edu-score">⭐ 7.5 CGPA</span>
+      </div>
+      <div class="edu-card reveal">
+        <div class="edu-ico">🏫</div>
+        <div class="edu-yr">2015 – 2016</div>
+        <h3>SSLC — Secondary School Certificate</h3>
+        <p class="edu-inst">ZPPHS High School, Chinthalapalem</p>
+        <p class="edu-board">SSC Board</p>
+        <span class="edu-score">⭐ 7.2 GPA</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ACHIEVEMENTS -->
+  <section id="achievements">
+    <div class="eyebrow"><div class="eyebrow-bar"></div><span class="eyebrow-text">Extra-Curricular Achievements</span></div>
+    <h2>Leadership &amp;<br>Sports Achievements</h2>
+    <div class="ach-list">
+      <div class="ach-card reveal">
+        <div class="ach-ico">🏐</div>
+        <div>
+          <div class="ach-title">Volleyball Team Captain — Nellore &amp; Hyderabad (2015–2017)</div>
+          <div class="ach-desc">Represented school as Captain of the Volleyball team in 2015–2017 at Nellore and Hyderabad; secured 2nd place in both prestigious inter-school tournaments, demonstrating leadership and competitive excellence.</div>
+        </div>
+      </div>
+      <div class="ach-card reveal">
+        <div class="ach-ico">🏃</div>
+        <div>
+          <div class="ach-title">Vice Captain — Kho-Kho Team, ZPPHS High School (2015)</div>
+          <div class="ach-desc">Served as Vice Captain of the Kho-Kho team at ZPPHS High School in 2015, securing 2nd place at the inter-school competition and showcasing strong team leadership and sportsmanship.</div>
+        </div>
+      </div>
+      <div class="ach-card reveal">
+        <div class="ach-ico">🏆</div>
+        <div>
+          <div class="ach-title">Multi-Sport Participation — School &amp; College Level</div>
+          <div class="ach-desc">Actively participated in Volleyball, Badminton, and Cricket at both school and college levels — demonstrating consistent teamwork, physical discipline, and a competitive, winning mindset across diverse sports.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
 </div>
 
-<div class="card">
-<div class="card-icon"><i class="fas fa-book"></i></div>
-<div class="card-title">SSC</div>
-<div class="card-desc">ZPPHS High School</div>
-<div class="card-extra">CGPA: 7.2</div>
-</div>
-
-</div>
-
-</section>
-
-<section id="skills">
-
-<h2>Skills</h2>
-
-<div class="card-grid">
-
-<div class="card"><div class="card-icon"><i class="fas fa-chart-line"></i></div><div class="card-title">Business Development</div></div>
-
-<div class="card"><div class="card-icon"><i class="fas fa-handshake"></i></div><div class="card-title">Client Management</div></div>
-
-<div class="card"><div class="card-icon"><i class="fas fa-search"></i></div><div class="card-title">Market Research</div></div>
-
-<div class="card"><div class="card-icon"><i class="fas fa-comments"></i></div><div class="card-title">Communication</div></div>
-
-</div>
-
-</section>
-
-<section id="contact">
-
-<h2>Contact</h2>
-
-<div class="card-grid">
-
-<div class="card">
-<div class="card-icon"><i class="fas fa-envelope"></i></div>
-<div class="card-title">Email</div>
-<div class="card-desc">harikrishnadasari2219@gmail.com</div>
-</div>
-
-<div class="card">
-<div class="card-icon"><i class="fas fa-phone"></i></div>
-<div class="card-title">Phone</div>
-<div class="card-desc">9392680553</div>
-</div>
-
-</div>
-
-
-</section>
-
-</main>
-
+<!-- ═══ FOOTER ═══ -->
 <footer>
-© 2026 Harikrishna Dasari | All Rights Reserved
+  <div>
+    <div class="fl-name">Hari<span>krishna</span> Dasari</div>
+    <div class="fl-sub">Business Development Executive &nbsp;·&nbsp; Hyderabad, Telangana &nbsp;·&nbsp; B.Tech ECE 2023</div>
+  </div>
+  <div class="footer-right">
+    <a href="tel:9392680553">📞 9392680553</a>
+    <a href="mailto:harikrishnadasari2219@gmail.com">✉️ harikrishnadasari2219@gmail.com</a>
+    <span>© 2025 All Rights Reserved</span>
+  </div>
 </footer>
 
 <script>
+  // Scroll reveal
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); }
+    });
+  }, { threshold: 0.1 });
 
-const observer=new IntersectionObserver(entries=>{
-entries.forEach(entry=>{
-if(entry.isIntersecting){
-entry.target.classList.add("show");
-}
-});
-},{threshold:0.2});
+  document.querySelectorAll('.reveal').forEach((el) => {
+    const sibs = Array.from(el.parentElement.querySelectorAll('.reveal'));
+    el.style.transitionDelay = (sibs.indexOf(el) % 3) * 0.11 + 's';
+    io.observe(el);
+  });
 
-document.querySelectorAll(".card").forEach(card=>{
-observer.observe(card);
-});
-
+  // Active nav highlight
+  const secs = document.querySelectorAll('section[id]');
+  const navAs = document.querySelectorAll('.nav-links a');
+  window.addEventListener('scroll', () => {
+    let cur = '';
+    secs.forEach(s => { if (scrollY >= s.offsetTop - 160) cur = s.id; });
+    navAs.forEach(a => {
+      a.classList.toggle('active', a.getAttribute('href') === '#' + cur);
+    });
+  });
 </script>
-
 </body>
 </html>
